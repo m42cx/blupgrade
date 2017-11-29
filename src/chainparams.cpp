@@ -169,14 +169,9 @@ public:
         pchMessageStart[2] = 0xb5;
         pchMessageStart[3] = 0xda;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1411111111;
+        genesis.nTime = 1511996952;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 2;
-        hashGenesisBlock = genesis.GetHash();
-        nDefaultPort = 18444;
-        strDataDir = "regtest";
-
-
 
      if (true && genesis.GetHash() != hashGenesisBlock)
                         {
@@ -207,6 +202,15 @@ public:
                            printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str()); //improvised. worked for me, to find merkle root
 
                        }
+
+
+        hashGenesisBlock = genesis.GetHash();
+        nDefaultPort = 18444;
+        strDataDir = "regtest";
+
+
+
+
 
         assert(hashGenesisBlock == uint256(""));
 
