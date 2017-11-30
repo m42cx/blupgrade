@@ -54,12 +54,12 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 
 static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% per year
 
-inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 38423; }
+inline bool IsProtocolV1RetargetingFixed(int nHeight) { return TestNet() || nHeight > 6675; }
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 6675; }
 inline bool IsProtocolV3(int64_t nTime) { return TestNet() || nTime > 1744028400; }
 
 inline int64_t FutureDriftV1(int64_t nTime) { return nTime + 24 * 60 * 60; }
-inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15; }
+inline int64_t FutureDriftV2(int64_t nTime) { return nTime + 15 * 60 * 60; }
 inline int64_t FutureDrift(int64_t nTime, int nHeight) { return IsProtocolV2(nHeight) ? FutureDriftV2(nTime) : FutureDriftV1(nTime); }
 
 inline unsigned int GetTargetSpacing(int nHeight) { return IsProtocolV2(nHeight) ? 64 : 60; }
