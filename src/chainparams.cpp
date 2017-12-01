@@ -85,7 +85,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000552ff7b5d69771164009f413a2df1fd654dec6e499ec77cf854006cdf2b"));
         assert(genesis.hashMerkleRoot == uint256("0xf9e9a703e44a1bead5397fdbb54d5af9e28ee4a2e3d762811d2dec1def193178"));
 
-//        vSeeds.push_back(CDNSSeedData("vasin.nl", "dnsseed.vasin.nl"));
+        vSeeds.push_back(CDNSSeedData("178.46.186.178", "178.46.186.178"));
 //        vSeeds.push_back(CDNSSeedData("vps.joshuajbouw.com", "dnsseed.joshuajbouw.com"));
 
         vSeeds.clear();
