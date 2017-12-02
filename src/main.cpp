@@ -1513,7 +1513,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     
     if (IsProofOfWork())
     {
-        int nHeight = pindexPrev->nHeight+1;
+        int nHeight = pindex->nHeight;
         int64_t nReward = GetProofOfWorkReward(nFees , nHeight);
         // Check coinbase reward
         if (vtx[0].GetValueOut() > nReward)
