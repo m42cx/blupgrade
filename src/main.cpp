@@ -969,10 +969,9 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 }
 
 // miner's coin base reward
-int64_t GetProofOfWorkReward(int64_t nFees)
+int64_t GetProofOfWorkReward(int64_t nFees, int nHeight)
 {
     
-    int nHeight = pindex->nHeight
     if (nHeight < 10000) {
         int64_t nSubsidy = 10000 * COIN;
     }  else {
@@ -1512,7 +1511,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
     if (IsProofOfWork())
     {
-        int64_t nReward = GetProofOfWorkReward(nFees);
+        int64_t nReward = GetProofOfWorkReward(nFees, pindex->nHeight);
         // Check coinbase reward
         if (vtx[0].GetValueOut() > nReward)
             return DoS(50, error("ConnectBlock() : coinbase reward exceeded (actual=%d vs calculated=%d)",
